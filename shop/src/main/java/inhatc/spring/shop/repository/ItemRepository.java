@@ -19,4 +19,14 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     @Query(value = "select * from Item i where i.item_Detail like %:itemDetail% order by i.price desc", nativeQuery = true)
     List<Item> findByDetailNative(@Param("itemDetail") String itemDetail);    // Native
+
+    // 4주차 과제 - 2023-09-20
+    List<Item> findByStockNumberGreaterThanEqualAndItemNmLike(int stockNumber, String itemNm);
+
+    @Query("select i from Item i where i.stockNumber >= 160 and i.itemNm like '%5%'")
+    List<Item> findByStockNumberAndItemNmJPQL();
+
+    @Query(value = "select * from Item i where i.stock_number >= 160 and i.item_nm like '%5%'", nativeQuery = true)
+    List<Item> findByStockNumberAndItemNmNative();
+
 }
