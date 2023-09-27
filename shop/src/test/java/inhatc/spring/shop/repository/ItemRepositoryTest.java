@@ -3,7 +3,6 @@ package inhatc.spring.shop.repository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import inhatc.spring.shop.Entity.Item;
 import static inhatc.spring.shop.Entity.QItem.item;
-
 import inhatc.spring.shop.Entity.QItem;
 import inhatc.spring.shop.constant.ItemSellStatus;
 import jakarta.persistence.EntityManager;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDateTime;
 import java.util.List;
-
 
 @SpringBootTest
 // @Transactional -> 이거 걸어두면 db 저장 안됨

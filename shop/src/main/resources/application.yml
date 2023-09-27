@@ -5,6 +5,16 @@ spring:
   application:
     name: spring-shop
 
+  devtools:
+    restart:
+      enabled: false
+
+    livereload:
+      enabled: false
+
+  thymeleaf:
+    cache: false
+
   ####################################
   # 데이터베이스 설정
   ####################################
