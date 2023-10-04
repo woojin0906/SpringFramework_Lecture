@@ -8,7 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HelloController {
 
-//    @GetMapping("/")
+    @GetMapping("/")
+    public String index() {
+
+        return "index";
+    }
+
+    //    @GetMapping("/")
 //    public UserDto hello() {
 //        UserDto userDto = UserDto.builder().name("홍길동").age(20).build();
 //        userDto.setAge(20);
