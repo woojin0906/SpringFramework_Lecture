@@ -30,6 +30,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request -> request
                 .requestMatchers("/css/**").permitAll()
                 .requestMatchers("/", "/member/**").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()); // 위의 경로를 제외한 나머지 경로에는 인증 걸기
 
         http.exceptionHandling(exception -> exception
