@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .requestMatchers("/", "/member/**").permitAll()
                 .anyRequest().authenticated()); // 위의 경로를 제외한 나머지 경로에는 인증 걸기
 
+        http.exceptionHandling(exception -> exception
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
 
         return http.build();
     }
