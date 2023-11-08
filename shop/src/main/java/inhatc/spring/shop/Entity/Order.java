@@ -2,7 +2,6 @@ package inhatc.spring.shop.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Table(name = "orders")
 public class Order {
     @Id
@@ -30,7 +28,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;   // 주문 상태
 
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItemList = new ArrayList<>(); // 주문 상품
 
 }
