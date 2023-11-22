@@ -44,6 +44,14 @@ spring:
         format_sql: true    # 포멧 처리해서 보이기
     database-platform: org.hibernate.dialect.MySQL8Dialect  # MySQL8 버전 사용
 
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+itemImgLocation: D:/shop/item
+uploadPath: file:///D:/shop
+
 ####################################
 # Log Setting
 ####################################
